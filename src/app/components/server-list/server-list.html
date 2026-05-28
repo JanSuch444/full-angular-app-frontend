@@ -1,0 +1,22 @@
+<div class="skryty">
+        @if (servery() === null) {
+                <p style="padding: 20px; color: #666; text-align: center;">Načítám aktuální data o serverech...</p>
+        }
+        @else {
+                @for ( server of servery(); track server.jmeno ) {
+                        <div class="part1">
+                                <div class="subpart1">
+                                        <div class="vyraznytext">
+                                                <i class="fa-solid fa-circle-check fa" style="color: rgb(0, 157, 12);"></i>
+                                                {{ server.jmeno }}
+                                        </div>
+                                        <div class="zeltext">
+                                                {{ vypoctiUptime(server.historie) }} uptime
+                                        </div>
+                                </div>
+
+                                <app-uptime-bar [historie]="server.historie"></app-uptime-bar>
+                        </div>
+                }
+        }
+</div>

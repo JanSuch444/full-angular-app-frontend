@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+// Globální styly pro tmavý režim navázané na body
+body {
+  background-color: #ffffff;
+  color: #2d3748;
+  transition: background-color 0.3s ease, color 0.3s ease;
+} 
+
+body.tmavy-rezim {
+  background-color: #1a202c !important; // Tmavé pozadí pro celou obrazovku
+  color: #f7fafc;
+
+  .vyraznytext {
+    color: #ffffff !important; // Čistě bílá barva pro názvy serverů
+  }
+
+  // Přebarvení vnitřního boxu dropdownu
+  .dropdown {
+    background-color: #2d3748 !important;
+    border-color: #4a5568 !important;
+
+    .vnitrnyDrop {
+      background-color: #2d3748 !important;
+      color: #f7fafc !important;
+      
+      &:hover {
+        background-color: #4a5568 !important;
+      }
+    }
+  }
+
+  // Přebarvení tlačítek v hlavičce
+  .header button {
+    color: #cbd5e0 !important;
+    background-color:#1a202c !important;
+    &:hover {
+      background-color: #2d3748 !important;
+    }
+  }
+
+  .stav {
+    background-color:#2d374852;
+    border: #2d3748 1px solid;
+  }
+}

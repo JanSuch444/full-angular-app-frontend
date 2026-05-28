@@ -1,0 +1,44 @@
+:host {
+    display: block;
+}
+
+.prouzek {
+        width: 100%;
+        height: 15px;
+        background-color: #009D0C;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+
+        &:hover {
+                transform: scale(1.2);
+                opacity: 1;
+                z-index: 10;
+                position: relative;
+                box-shadow: 0 0 10px rgba(0, 157, 12, 0.8);
+        }
+
+        &.udrzba {
+                background-color: #007bff;
+
+                &:hover {
+                        box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+                }
+        }
+        &.vypadek {
+                background-color: #fd061f;
+
+                &:hover {
+                        box-shadow: 0 0 10px rgba(220, 53, 69, 0.8);
+                }
+        }
+
+        @media(max-width:768px) {
+               height: 12px;
+        }
+        @media(max-width:580px) {
+                height: 8px;
+                margin: 0;
+                gap: 0;
+        }
+}

@@ -1,0 +1,168 @@
+// Globální obal aplikace
+.Container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+        // KDYŽ SE AKTIVUJE TMAVÝ REŽIM:
+        &.tmavyRezim {
+                background-color: #1a202c;
+                color: #f7fafc;
+
+                .dropdown {
+                        background-color: #2d3748;
+                        border-color: #4a5568;
+
+                        .vnitrnyDrop {
+                                background-color: #2d3748;
+                                color: #f7fafc;
+
+                                &:hover {
+                                         background-color: #4a5568;
+                                }
+                        }
+                }
+        }
+}
+
+// Styl pro vrchní lištu (Header)
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  .headerObrazek img {
+    height: 40px;
+    display: block;
+  }
+
+  .headerStatus {
+        transform: scale(1.2);
+        background-color: rgb(238, 238, 238);
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    color: #4a5568;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #edf2f7;
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Poskládá logo a tlačítka pod sebe
+    gap: 16px;
+    text-align: center;
+
+    // Tlačítka se seřadí hezky vedle sebe/pod sebe do mřížky, aby nepřetékala
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    button {
+      font-size: 0.85rem; // Na mobilu zmenšíme písmo tlačítek
+      padding: 6px 10px;
+    }
+  }
+}
+
+// Velký zelený panel se stavem služeb
+.stav {
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+
+  h2 {
+    color: #22543d;
+    margin: 12px 0 4px 0;
+    font-size: 1.5rem;
+  }
+
+  p {
+    color: #2f855a;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+// Ten hlavní klikací zaoblený box s dropdownem
+.dropdown {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  .vnitrnyDrop {
+    width: 100%;
+    padding: 20px 24px;
+    background: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+
+    &:hover {
+      background: #f7fafc;
+    }
+
+    .vDvpravo {
+      font-size: 0.95rem;
+      color: #009D0C;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+// Spodní patička webu
+.zaver {
+  margin-top: 40px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #a0aec0;
+
+  .zaverVnitrni {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+     :hover {
+        transform: scale(1.1);
+    }
+  }
+
+  .zmenaJazyka {
+    background: transparent;
+    border: 1px solid #cbd5e0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}

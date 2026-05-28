@@ -1,0 +1,11 @@
+<div class="graf">
+  <div class="uptimeBar">
+    @for (stav of historie(); track $index) {
+      <app-prouzek [stav]="stav"></app-prouzek>
+    }
+  </div>
+  <div class="popisek">
+    <div>90 days ago</div>
+    <div>Today</div>
+  </div>
+</div>

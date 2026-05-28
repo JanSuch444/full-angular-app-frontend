@@ -1,0 +1,46 @@
+.skryty {
+        display: flex;
+        flex-direction: column;
+}
+
+.part1 {
+        padding: 24px;
+        border-bottom: 1px solid #f1f3f5;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: fit-content;
+        padding: 15px;
+
+        &:last-child {
+                border-bottom: none;
+        }
+}
+
+.subpart1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        gap: 15px;
+        margin-top: 25px;
+
+        .vyraznytext {
+                font-weight: 600;
+                color: #2D3748;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+        }
+
+         .zeltext {
+                font-weight: 600;
+                color: #009D0C;
+        }
+
+        @media (max-width: 480px) {
+                flex-direction: column; // Název serveru nahoře, procenta pod ním
+                align-items: flex-start; // Zarovná vše doleva
+                gap: 4px; // Drobná mezera mezi nimi
+        }
+}

@@ -1,0 +1,22 @@
+.graf {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+
+        .uptimeBar {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, 15px);
+                height: auto;
+                width: 100%;
+                gap: 4px;
+                align-items: stretch;
+        }
+}
+
+.popisek {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #718096;
+}
