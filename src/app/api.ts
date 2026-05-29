@@ -1,6 +1,8 @@
 export interface ServerData {
     jmeno: string;
-    historie: number[];
+    overallStatus: string;
+    overallStatusLabel: string;
+    historie: { status: number; cas: string}[];
 }
 
 export async function nactiDataZBackendu(): Promise<ServerData[] | null> {

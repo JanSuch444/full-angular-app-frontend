@@ -9,5 +9,5 @@ import { Prouzek } from '../prouzek/prouzek';
 })
 export class UptimeBar {
         // Signálový vstup pro pole čísel (historie)
-        historie = input.required<number[]>();
+        historie = input.required<{ status: number; cas: string}[]>();
 }

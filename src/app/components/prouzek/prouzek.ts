@@ -8,12 +8,15 @@ import { required } from '@angular/forms/signals';
   styleUrl: './prouzek.scss',
 })
 export class Prouzek {
-  stav = input.required<number>();
+  stav = input.required<{ status: number; cas: string}>()
 
   textStavu= computed(() => {
-    const aktualniStav = this.stav();
-    if (aktualniStav === 2) return 'Výpadek';
-    if (aktualniStav === 1) return 'Údržba';
-    return 'Plne funkcni';
+    const aktualniStav = this.stav().status;
+    const casZaznamu = this.stav().cas;
+
+    let stavText = 'Plne funkcni'
+    if (aktualniStav === 2) stavText = 'Výpadek';
+    if (aktualniStav === 1) stavText = "Údržba";
+    return `${stavText} (${casZaznamu})`
   });
 }

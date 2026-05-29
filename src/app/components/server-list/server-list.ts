@@ -12,9 +12,15 @@ export class ServerList {
         // Signálový vstup, který přijímá pole serverů, nebo null při načítání
         servery = input.required<any[] | null>();
 
-        vypoctiUptime(historie: number[]): string {
+        vypoctiUptime(historie: { status: number; cas: string}[]): string {
                 if (!historie || historie.length === 0) return '100%';
-                const bezVypadku = historie.filter(stav => stav === 0 || stav === 1).length;
+
+                console.log('Data pro server:', historie);
+
+                const bezVypadku = historie.filter(bod  => {
+                        return Number(bod.status) !== 2;
+                }).length;
+
                 const procenta = (bezVypadku  / historie.length) * 100;
                 return procenta.toFixed(3) + '%';
         }

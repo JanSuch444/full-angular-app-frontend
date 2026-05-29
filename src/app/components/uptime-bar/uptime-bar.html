@@ -1,7 +1,7 @@
 <div class="graf">
   <div class="uptimeBar">
-    @for (stav of historie(); track $index) {
-      <app-prouzek [stav]="stav"></app-prouzek>
+    @for (bod of historie(); track $index) {
+      <app-prouzek [stav]="bod"></app-prouzek>
     }
   </div>
   <div class="popisek">

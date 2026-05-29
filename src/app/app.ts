@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
                         const data = await response.json();
                         
                         if (data) {
-                                // OPRAVA: Do signálu zapisujeme přes .set()
+                                // Do signálu zapisujeme přes .set()
                                 this.dataStatusu.set(data);
 
                                 if (data.overallStatus === "operational") {
@@ -52,12 +52,12 @@ export class AppComponent implements OnInit {
                                         this.textStavu = "All services are online";
                                 }
 
-                                // OPRAVA: Vypnutí loadingu se musí provést přes .set(false)
+                                //Vypnutí loadingu se musí provést přes .set(false)
                                 this.loading.set(false);
                                 this.error.set("");
                         }
                 } catch (err) {
-                        // OPRAVA: I při chybě musíme loading vypnout přes .set(false)
+                        // I při chybě musíme loading vypnout přes .set(false)
                         this.loading.set(false);
                         this.error.set("Nepodarilo se nacist data.");
                 }
